@@ -9,14 +9,15 @@
 
 		
 
-		<link rel="modulepreload" href="/app/start-deefce4a.js">
+		<link rel="modulepreload" href="/app/start-bf9c0ad6.js">
 		<link rel="modulepreload" href="/app/chunks/vendor-d2c730e4.js">
-		<link rel="modulepreload" href="/app/layout.svelte-b064680e.js">
-		<link rel="modulepreload" href="/app/pages/index.svelte-7adfeac0.js">
-		<link rel="stylesheet" href="/app/assets/start-61d1577b.css">
+		<link rel="modulepreload" href="/app/pages/__layout.svelte-87aaaeed.js">
+		<link rel="modulepreload" href="/app/pages/index.svelte-0ce91e24.js">
+		<link rel="stylesheet" href="/app/assets/start-c446e5f0.css">
+		<link rel="stylesheet" href="/app/assets/pages/__layout.svelte-24df4003.css">
 
 		<script type="module">
-			import { start } from "/app/start-deefce4a.js";
+			import { start } from "/app/start-bf9c0ad6.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":""},
@@ -29,8 +30,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/app/layout.svelte-b064680e.js"),
-						import("/app/pages/index.svelte-7adfeac0.js")
+						import("/app/pages/__layout.svelte-87aaaeed.js"),
+						import("/app/pages/index.svelte-0ce91e24.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -47,7 +48,7 @@
 	<div id="svelte">
 
 
-<h1>Welcome to SvelteKit</h1>
+<h1 class="py-2 bg-indigo-800 text-white text-center font-bold text-6xl mx-28">CMB</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 <p>Hello</p>
 <img src="/favicon.png" alt="fav">
