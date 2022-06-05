@@ -1,76 +1,76 @@
 @font-face {
   font-family: "Comfortaa";
-  src: url("Comfortaa-Light.ttf");
+  src: url("/Comfortaa-Light.ttf");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Comfortaa";
-  src: url("Comfortaa-Regular.ttf");
+  src: url("/Comfortaa-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Comfortaa";
-  src: url("Comfortaa-Medium.ttf");
+  src: url("/Comfortaa-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Comfortaa";
-  src: url("Comfortaa-Semibold.ttf");
+  src: url("/Comfortaa-Semibold.ttf");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Comfortaa";
-  src: url("Comfortaa-Bold.ttf");
+  src: url("/Comfortaa-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenSans";
-  src: url("OpenSans-Light.ttf");
+  src: url("/OpenSans-Light.ttf");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenSans";
-  src: url("OpenSans-Regular.ttf");
+  src: url("/OpenSans-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenSans";
-  src: url("OpenSans-Medium.ttf");
+  src: url("/OpenSans-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenSans";
-  src: url("OpenSans-Semibold.ttf");
+  src: url("/OpenSans-Semibold.ttf");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenSans";
-  src: url("OpenSans-Bold.ttf");
+  src: url("/OpenSans-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "OpenSans";
-  src: url("OpenSans-Italic.ttf");
+  src: url("/OpenSans-Italic.ttf");
   font-weight: 400;
   font-style: italic;
 }
