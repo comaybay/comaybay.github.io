@@ -16,7 +16,15 @@ const config = {
 		appDir: "app",
 		prerender: {
 			default: true
-		}
+		},
+		// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+		routes: (filepath) => ![
+			// default config
+			/(?:(?:^_|\/_)|(?:^\.|\/\.)(?!well-known))/,
+			
+			// exclude files inside directories named "components"
+			/components\//
+		].some(regex => regex.test(filepath)),
 	}
 };
 
