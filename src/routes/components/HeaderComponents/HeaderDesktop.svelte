@@ -1,9 +1,9 @@
 <script lang="ts">
-<script>
+	import CMB from './CMB.svelte';
 	import SettingsButton from './SettingsButton.svelte';
 </script>
 
-<h1 class="my-4 font-comfortaa py-2 text-center text-6xl mx-28">Cỏ May Bay</h1>
+<CMB/>
 <div class="mx-4 hidden md:flex justify-center">
 	<nav class="flex items-center space-x-8 text-xl font-comfortaa px-4 pb-1 border-b">
 		<a href="/self">Bản thân</a>
