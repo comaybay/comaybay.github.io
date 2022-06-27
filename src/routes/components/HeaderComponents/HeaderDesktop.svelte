@@ -1,18 +1,32 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import CMB from './CMB.svelte';
 	import SettingsButton from './SettingsButton.svelte';
+	import ShakingLink from './ShakingLink.svelte';
+	const navItems = [
+		{ href: '/self', text: 'Bản thân' },
+		{ href: '/stuff', text: 'Stuff' },
+		{ href: '/', text: 'Trang chủ' },
+		{ href: '/random', text: 'Linh tinh' },
+		{ href: '/contact', text: 'Liên hệ' }
+	];
 </script>
 
-<CMB/>
-<div class="mx-4 hidden md:flex justify-center">
-	<nav class="flex items-center space-x-8 text-xl font-comfortaa px-4 pb-1 border-b">
-		<a href="/self">Bản thân</a>
-		<a href="/stuff">Stuff</a>
-		<a href="/">Trang chủ</a>
-		<a href="/random">Linh tinh</a>
-		<a href="/contact">Liên hệ</a>
-	</nav>
-	<div class="ml-2 mb-0.5 w-0">
-		<SettingsButton />
+<div class="hidden md:block">
+	<CMB />
+	<div class="flex justify-center mx-4">
+		<nav class="flex items-center space-x-8 text-xl font-comfortaa px-4 border-b">
+			{#each navItems as item}
+				<ShakingLink
+					className="transition h-full flex items-center pb-1
+         {item.href === $page.url.pathname ? 'border-b-4 border-slate-500' : ''}"
+					href={item.href}
+					text={item.text}
+				/>
+			{/each}
+		</nav>
+		<div class="ml-2 w-0">
+			<SettingsButton />
+		</div>
 	</div>
 </div>
