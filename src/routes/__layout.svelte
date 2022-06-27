@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import "../tailwind.css";
   import Header from "./components/Header.svelte";
 </script>

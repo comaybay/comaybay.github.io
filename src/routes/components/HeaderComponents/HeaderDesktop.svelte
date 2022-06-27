@@ -1,3 +1,4 @@
+<script lang="ts">
 <script>
 	import SettingsButton from './SettingsButton.svelte';
 </script>

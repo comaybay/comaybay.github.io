@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SettingsButton from './SettingsButton.svelte';
 	import MenuButton from './MenuButton.svelte';
 </script>

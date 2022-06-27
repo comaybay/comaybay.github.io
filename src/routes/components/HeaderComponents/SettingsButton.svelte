@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { spring } from 'svelte/motion';
 	import { fade } from 'svelte/transition';
 
