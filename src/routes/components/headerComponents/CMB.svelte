@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { randomRangeInt, randomRange } from 'src/utils/math';
 
+	export let className = '';
+
 	const rand = () => randomRangeInt(-2, 2);
 	const randomTransformStyle = () => `
     transform: translate(${rand()}px, ${rand()}px) 
@@ -10,23 +12,36 @@
 
 	let titleProps = 'Cỏ May Bay'.split('').map(char => ({
 		char,
-		style: ''
+		style: randomTransformStyle()
 	}));
 
 	const duration = 1000;
-	setInterval(() => {
-		titleProps.forEach(props => (props.style = randomTransformStyle()));
+	setTimeout(() => {
+		titleProps.forEach(props => (props.style = ''));
 		titleProps = titleProps;
-	}, duration);
+		setTimeout(loop, duration * 1.5);
+
+		function loop() {
+			titleProps.forEach(props => (props.style = randomTransformStyle()));
+			titleProps = titleProps;
+			setTimeout(loop, duration);
+		}
+	}, 0);
 </script>
 
-<h1 class="my-4 font-comfortaa py-2 text-center text-6xl mx-28">
-	{#each titleProps as props}
-		<span
-			class="inline-block whitespace-pre transition ease-[cubic-bezier(0.5,-1,0.5,2)] duration-[700ms]"
-			style={props.style}
-		>
-			{props.char}
-		</span>
-	{/each}
-</h1>
+<div class="{className} font-comfortaa py-2 text-6xl text-slate-500 text-center">
+	<a href="/">
+		{#each titleProps as props}
+			{#if props.char === ' '}
+				<span class="px-1">&nbsp;</span>
+			{:else}
+				<span
+					class="inline-block px-1 transition ease-[cubic-bezier(0.5,-1,0.5,2)] duration-[700ms]"
+					style={props.style}
+				>
+					{props.char}
+				</span>
+			{/if}
+		{/each}
+	</a>
+</div>
