@@ -33,9 +33,9 @@
 		<div
 			on:click={() => (showNavBar = false)}
 			transition:fade={{ duration: 100 }}
-			class="absolute -z-10 w-full top-0 bg-black bg-opacity-30 h-screen"
+			class="absolute top-0 z-10 w-full bg-black bg-opacity-30 h-screen"
 		/>
-		<div class="relative z-10 w-full flex flex-col divide-y text-lg">
+		<div class="absolute z-20 w-full flex flex-col divide-y text-lg">
 			{#each navItems as item, i}
 				{@const x = 50 * (i % 2 === 0 ? 1 : -1)}
 				<a
