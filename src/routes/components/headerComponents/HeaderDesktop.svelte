@@ -7,7 +7,7 @@
 		{ href: '/self', text: 'Bản thân' },
 		{ href: '/stuff', text: 'Stuff' },
 		{ href: '/', text: 'Trang chủ' },
-		{ href: '/random', text: 'Linh tinh' },
+		{ href: '/misc', text: 'Linh tinh' },
 		{ href: '/contact', text: 'Liên hệ' }
 	];
 </script>
