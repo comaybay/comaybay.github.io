@@ -1,17 +1,11 @@
-<script context="module" lang="ts">
-	let header: HTMLElement;
-
-	export function getHeight() {
-		return header.offsetHeight;
-	}
-</script>
-
 <script lang="ts">
+	import CMB from './headerComponents/CMB.svelte';
 	import HeaderDesktop from './headerComponents/HeaderDesktop.svelte';
 	import HeaderMobile from './headerComponents/HeaderMobile.svelte';
 </script>
 
-<header bind:this={header} class="w-full fixed">
+<CMB className="hidden md:block mt-4" />
+<header class="w-full sticky top-0">
 	<HeaderDesktop />
 	<HeaderMobile />
 </header>

@@ -12,13 +12,12 @@
 	];
 </script>
 
-<nav class="hidden md:block">
-	<CMB />
+<nav class="hidden md:block pt-4 bg-white">
 	<div class="flex justify-center mx-4">
 		<div class="flex items-center space-x-8 text-xl font-comfortaa px-4 border-b">
 			{#each navItems as item}
 				<ShakingLink
-					className="transition h-full flex items-center pb-1
+					className="transition h-full flex items-center pb-2
          {item.href === $page.url.pathname ? 'border-b-4 border-slate-500' : ''}"
 					href={item.href}
 					text={item.text}
