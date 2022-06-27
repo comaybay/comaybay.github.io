@@ -1,9 +1,17 @@
-<script lang="ts">
-	import HeaderDesktop from './headerComponents/HeaderDesktop.svelte';
-	import MenuButton from './headerComponents/MenuButton.svelte';
-	import SettingsButton from './headerComponents/SettingsButton.svelte';
+<script context="module" lang="ts">
+	let header: HTMLElement;
+
+	export function getHeight() {
+		return header.offsetHeight;
+	}
 </script>
 
-<header>
+<script lang="ts">
+	import HeaderDesktop from './headerComponents/HeaderDesktop.svelte';
+	import HeaderMobile from './headerComponents/HeaderMobile.svelte';
+</script>
+
+<header bind:this={header} class="w-full fixed">
 	<HeaderDesktop />
+	<HeaderMobile />
 </header>

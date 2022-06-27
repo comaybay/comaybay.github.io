@@ -1,7 +1,14 @@
 <script lang="ts">
-  import "../tailwind.css";
-  import Header from "./components/Header.svelte";
+	import { onMount } from 'svelte';
+
+	import '../tailwind.css';
+	import Header, { getHeight } from './components/Header.svelte';
+
+	let style = '';
+	onMount(() => (style = `padding-top: ${getHeight()}px;`));
 </script>
 
-<Header/>
-<slot />
+<Header />
+<div {style}>
+	<slot />
+</div>
