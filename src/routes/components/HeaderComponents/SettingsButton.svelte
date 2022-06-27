@@ -2,6 +2,8 @@
 	import { spring } from 'svelte/motion';
 	import { fade } from 'svelte/transition';
 
+	export let size = 35;
+
 	let rotation = spring(0, {
 		stiffness: 0.1,
 		damping: 0.3
@@ -18,8 +20,8 @@
 <button>
 	<svg
 		style={rotateStyle}
-		width="35"
-		height="35"
+		width={size}
+		height={size}
 		viewBox="0 0 35 35"
 		class="text-slate-500"
 		fill="none"

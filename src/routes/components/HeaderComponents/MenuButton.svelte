@@ -1,6 +1,7 @@
 <svg
+	on:click
 	xmlns="http://www.w3.org/2000/svg"
-	class="h-10 w-10 text-slate-500"
+	class="h-7 text-slate-500"
 	fill="none"
 	viewBox="0 0 24 24"
 	stroke="currentColor"

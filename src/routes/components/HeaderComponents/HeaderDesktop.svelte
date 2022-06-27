@@ -12,10 +12,10 @@
 	];
 </script>
 
-<div class="hidden md:block">
+<nav class="hidden md:block">
 	<CMB />
 	<div class="flex justify-center mx-4">
-		<nav class="flex items-center space-x-8 text-xl font-comfortaa px-4 border-b">
+		<div class="flex items-center space-x-8 text-xl font-comfortaa px-4 border-b">
 			{#each navItems as item}
 				<ShakingLink
 					className="transition h-full flex items-center pb-1
@@ -24,9 +24,9 @@
 					text={item.text}
 				/>
 			{/each}
-		</nav>
+		</div>
 		<div class="ml-2 w-0">
 			<SettingsButton />
 		</div>
 	</div>
-</div>
+</nav>
