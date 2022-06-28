@@ -3,21 +3,13 @@
 	import { fly, fade } from 'svelte/transition';
 	import SettingsButton from './SettingsButton.svelte';
 	import MenuButton from './MenuButton.svelte';
-	import CMB from './CMB.svelte';
+	import navigationItems from './navigationItems';
 
 	let showNavBar = false;
 	const toggleShowNavBar = () => (showNavBar = !showNavBar);
-
-	const navItems = [
-		{ href: '/self', text: 'Bản thân' },
-		{ href: '/stuff', text: 'Stuff' },
-		{ href: '/', text: 'Trang chủ' },
-		{ href: '/misc', text: 'Linh tinh' },
-		{ href: '/contact', text: 'Liên hệ' }
-	];
 </script>
 
-<nav class="md:hidden">
+<nav class="sticky top-0 md:hidden">
 	<div
 		class="relative z-50 flex justify-between w-full items-center font-comfortaa px-4 pt-3 pb-2 border-b bg-white"
 	>
@@ -36,12 +28,12 @@
 			class="absolute top-0 z-10 w-full bg-black bg-opacity-30 h-screen"
 		/>
 		<div class="absolute z-20 w-full flex flex-col divide-y text-lg">
-			{#each navItems as item, i}
+			{#each $navigationItems as item, i}
 				{@const x = 50 * (i % 2 === 0 ? 1 : -1)}
 				<a
 					in:fly={{ y: -50, x, duration: 150, delay: i * 40 }}
-					out:fly={{ y: -50, x, duration: 150, delay: (navItems.length - 1 - i) * 40 }}
-					style="z-index: {navItems.length - i}"
+					out:fly={{ y: -50, x, duration: 150, delay: ($navigationItems.length - 1 - i) * 40 }}
+					style="z-index: {$navigationItems.length - i}"
 					class="relative block text-end pr-4 py-1 bg-white 
           {item.href === $page.url.pathname ? 'border-r-4 border-r-slate-500' : ''}"
 					href={item.href}
