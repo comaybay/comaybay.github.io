@@ -10,14 +10,24 @@
 	});
 
 	let hovered = false;
-	$: rotation.set(hovered ? 70 : 0);
+	let showSettings = false;
+
+	$: {
+		if (!showSettings && hovered) {
+			rotation.set(20);
+		} else {
+			rotation.set(showSettings ? 90 : 0);
+		}
+	}
+
 	$: rotateStyle = `transform: rotate(${$rotation}deg)`;
 
-	const onHover = () => (hovered = true);
-	const onLeave = () => (hovered = false);
+	const handleMouseEnter = () => (hovered = true);
+	const handleMouseLeave = () => (hovered = false);
+	const toggleSettings = () => (showSettings = !showSettings);
 </script>
 
-<button>
+<button on:click={toggleSettings} on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
 	<svg
 		style={rotateStyle}
 		width={size}
@@ -27,10 +37,8 @@
 		fill="none"
 		stroke="currentColor"
 		xmlns="http://www.w3.org/2000/svg"
-		on:mouseenter={onHover}
-		on:mouseleave={onLeave}
 	>
-		{#if hovered}
+		{#if showSettings}
 			<path
 				transition:fade={{ duration: 100 }}
 				class="fill-slate-300"
@@ -63,3 +71,7 @@
 		{/if}
 	</svg>
 </button>
+
+{#if showSettings}
+	<SettingsMenu />
+{/if}

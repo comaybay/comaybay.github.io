@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { fly, fade } from 'svelte/transition';
-	import SettingsButton from './SettingsButton.svelte';
+	import SettingsButton from '../settingsComponents/SettingsButton.svelte';
 	import MenuButton from './MenuButton.svelte';
 	import navigationItems from './navigationItems';
 

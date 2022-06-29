@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import CMB from './CMB.svelte';
-	import SettingsButton from './SettingsButton.svelte';
+	import SettingsButton from '../settingsComponents/SettingsButton.svelte';
 	import ShakingLink from './ShakingLink.svelte';
 	import navigationItems from './navigationItems';
 </script>
@@ -19,7 +19,7 @@
 				/>
 			{/each}
 		</div>
-		<div class="ml-2 w-0">
+		<div class="relative ml-2 w-0">
 			<SettingsButton />
 		</div>
 	</div>
