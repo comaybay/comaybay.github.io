@@ -23,7 +23,10 @@ function createLanguageStore(): Writable<Language> {
   return {
     subscribe,
     update,
-    set: (language: Language) => { localStorage.setItem('language', language); set(language) }
+    set(language: Language) {
+      localStorage.setItem('language', language);
+      set(language);
+    }
   }
 }
 

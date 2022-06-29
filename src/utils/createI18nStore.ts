@@ -20,7 +20,7 @@ export type Translation = {
 }
 
 /** translation in all supported languages */
-type I18nTranslations<T extends Translation> = {
+export type I18nTranslations<T extends Translation> = {
   [Property in Language]: T;
 }
 
