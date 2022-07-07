@@ -1,7 +1,7 @@
-export default function clickOutside(node: Node, handler: OnClickOusideHandler): SvelteActionReturnType {
-  const handleClick = (e: MouseEvent) => {
+export default function clickoutside(node: Node): SvelteActionReturnType {
+  const handleClick = (event: MouseEvent) => {
     if (!node.contains(event.target as Node)) {
-      handler(e);
+      node.dispatchEvent(new CustomEvent("clickoutside"));
     }
   };
 
