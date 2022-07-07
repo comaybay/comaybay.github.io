@@ -2,35 +2,44 @@
 	import { spring } from 'svelte/motion';
 	import { fade } from 'svelte/transition';
 
-	export let size = 35;
+	export let active = false;
+
+	let hovered = false;
 
 	let rotation = spring(0, {
 		stiffness: 0.1,
 		damping: 0.3
 	});
 
-	let hovered = false;
-	$: rotation.set(hovered ? 70 : 0);
+	$: {
+		if (!active && hovered) {
+			rotation.set(20);
+		} else {
+			rotation.set(active ? 90 : 0);
+		}
+	}
+
 	$: rotateStyle = `transform: rotate(${$rotation}deg)`;
 
-	const onHover = () => (hovered = true);
-	const onLeave = () => (hovered = false);
+	function toggleActive() {
+		active = !active;
+	}
 </script>
 
-<button>
+<button
+	on:click={toggleActive}
+	on:mouseenter={() => (hovered = true)}
+	on:mouseleave={() => (hovered = false)}
+>
 	<svg
 		style={rotateStyle}
-		width={size}
-		height={size}
 		viewBox="0 0 35 35"
-		class="text-slate-500"
+		class="w-[28px] md:w-[35px] text-slate-500"
 		fill="none"
 		stroke="currentColor"
 		xmlns="http://www.w3.org/2000/svg"
-		on:mouseenter={onHover}
-		on:mouseleave={onLeave}
 	>
-		{#if hovered}
+		{#if active}
 			<path
 				transition:fade={{ duration: 100 }}
 				class="fill-slate-300"
