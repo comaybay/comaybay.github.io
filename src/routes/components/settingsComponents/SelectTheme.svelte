@@ -8,7 +8,8 @@
 		name: string;
 	}
 
-	const themeItems: ThemeItem[] = [
+	let themeItems: ThemeItem[];
+	$: themeItems = [
 		{ code: 'light', name: $i18n.selectModeOptions.light },
 		{ code: 'dark', name: $i18n.selectModeOptions.dark },
 		{ code: 'system', name: $i18n.selectModeOptions.system }
