@@ -1,12 +1,39 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { fly, fade } from 'svelte/transition';
+	import SelectLanguage from '../settingsComponents/SelectLanguage.svelte';
+	import SelectMode from '../settingsComponents/SelectTheme.svelte';
 	import SettingsButton from '../settingsComponents/SettingsButton.svelte';
 	import MenuButton from './MenuButton.svelte';
 	import navigationItems from './navigationItems';
 
+	const settingsItems = [SelectLanguage, SelectMode];
+
 	let showNavBar = false;
-	const toggleShowNavBar = () => (showNavBar = !showNavBar);
+	let showSettings = false;
+
+	$: if (showSettings) {
+		showNavBar = false;
+	}
+
+	function toggleShowNavBar() {
+		showNavBar = !showNavBar;
+
+		if (showNavBar) {
+			showSettings = false;
+		}
+	}
+
+	function calculateFlyProps(itemsLength: number, index: number) {
+		const x = 50 * (index % 2 === 0 ? 1 : -1);
+		const y = -50;
+		const baseDelay = 40;
+		const duration = 150;
+		return {
+			in: { y, x, duration, delay: index * baseDelay },
+			out: { y, x, duration, delay: (itemsLength - 1 - index) * baseDelay }
+		};
+	}
 </script>
 
 <nav class="sticky top-0 md:hidden">
@@ -17,7 +44,7 @@
 			<a href="/" class="font-comfortaa text-slate-500 py-2 text-center text-xl">Cmb</a>
 		</div>
 		<div class="flex space-x-4">
-			<SettingsButton size={25} />
+			<SettingsButton bind:active={showSettings} />
 			<MenuButton on:click={toggleShowNavBar} />
 		</div>
 	</div>
@@ -29,10 +56,10 @@
 		/>
 		<div class="absolute z-20 w-full flex flex-col divide-y text-lg">
 			{#each $navigationItems as item, i}
-				{@const x = 50 * (i % 2 === 0 ? 1 : -1)}
+				{@const flyProps = calculateFlyProps($navigationItems.length, i)}
 				<a
-					in:fly={{ y: -50, x, duration: 150, delay: i * 40 }}
-					out:fly={{ y: -50, x, duration: 150, delay: ($navigationItems.length - 1 - i) * 40 }}
+					in:fly={flyProps.in}
+					out:fly={flyProps.out}
 					style="z-index: {$navigationItems.length - i}"
 					class="relative block text-end pr-4 py-1 bg-white 
           {item.href === $page.url.pathname ? 'border-r-4 border-r-slate-500' : ''}"
@@ -41,6 +68,27 @@
 				>
 					{item.text}
 				</a>
+			{/each}
+		</div>
+	{/if}
+
+	{#if showSettings}
+		<div
+			on:click={() => (showSettings = false)}
+			transition:fade={{ duration: 100 }}
+			class="absolute top-0 z-10 w-full bg-black bg-opacity-30 h-screen"
+		/>
+		<div class="absolute z-20 w-full flex flex-col divide-y">
+			{#each settingsItems as item, i}
+				{@const flyProps = calculateFlyProps($navigationItems.length, i)}
+				<div
+					in:fly={flyProps.in}
+					out:fly={flyProps.out}
+					style="z-index: {$navigationItems.length - i}"
+					class="px-4 py-2 w-full flex justify-end bg-white"
+				>
+					<svelte:component this={item} />
+				</div>
 			{/each}
 		</div>
 	{/if}
