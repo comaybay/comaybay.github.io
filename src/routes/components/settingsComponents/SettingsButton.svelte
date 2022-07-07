@@ -2,43 +2,44 @@
 	import { spring } from 'svelte/motion';
 	import { fade } from 'svelte/transition';
 
-	export let size = 35;
+	export let active = false;
+
+	let hovered = false;
 
 	let rotation = spring(0, {
 		stiffness: 0.1,
 		damping: 0.3
 	});
 
-	let hovered = false;
-	let showSettings = false;
-
 	$: {
-		if (!showSettings && hovered) {
+		if (!active && hovered) {
 			rotation.set(20);
 		} else {
-			rotation.set(showSettings ? 90 : 0);
+			rotation.set(active ? 90 : 0);
 		}
 	}
 
 	$: rotateStyle = `transform: rotate(${$rotation}deg)`;
 
-	const handleMouseEnter = () => (hovered = true);
-	const handleMouseLeave = () => (hovered = false);
-	const toggleSettings = () => (showSettings = !showSettings);
+	function toggleActive() {
+		active = !active;
+	}
 </script>
 
-<button on:click={toggleSettings} on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
+<button
+	on:click={toggleActive}
+	on:mouseenter={() => (hovered = true)}
+	on:mouseleave={() => (hovered = false)}
+>
 	<svg
 		style={rotateStyle}
-		width={size}
-		height={size}
 		viewBox="0 0 35 35"
-		class="text-slate-500"
+		class="w-[28px] md:w-[35px] text-slate-500"
 		fill="none"
 		stroke="currentColor"
 		xmlns="http://www.w3.org/2000/svg"
 	>
-		{#if showSettings}
+		{#if active}
 			<path
 				transition:fade={{ duration: 100 }}
 				class="fill-slate-300"
@@ -71,7 +72,3 @@
 		{/if}
 	</svg>
 </button>
-
-{#if showSettings}
-	<SettingsMenu />
-{/if}
