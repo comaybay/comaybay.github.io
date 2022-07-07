@@ -34,6 +34,11 @@
 			out: { y, x, duration, delay: (itemsLength - 1 - index) * baseDelay }
 		};
 	}
+
+	function closeMenu() {
+		showSettings = false;
+		showNavBar = false;
+	}
 </script>
 
 <nav class="sticky top-0 md:hidden">
@@ -41,19 +46,29 @@
 		class="relative z-50 flex justify-between w-full items-center font-comfortaa px-4 pt-3 pb-2 border-b bg-white"
 	>
 		<div>
-			<a href="/" class="font-comfortaa text-slate-500 py-2 text-center text-xl">Cmb</a>
+			<a
+				href="/"
+				class="font-comfortaa text-slate-500 py-2 text-center text-xl"
+				onclick={closeMenu}
+			>
+				Cmb
+			</a>
 		</div>
 		<div class="flex space-x-4">
 			<SettingsButton bind:active={showSettings} />
 			<MenuButton on:click={toggleShowNavBar} />
 		</div>
 	</div>
-	{#if showNavBar}
+
+	{#if showNavBar || showSettings}
 		<div
-			on:click={() => (showNavBar = false)}
+			on:click={closeMenu}
 			transition:fade={{ duration: 100 }}
 			class="absolute top-0 z-10 w-full bg-black bg-opacity-30 h-screen"
 		/>
+	{/if}
+
+	{#if showNavBar}
 		<div class="absolute z-20 w-full flex flex-col divide-y text-lg">
 			{#each $navigationItems as item, i}
 				{@const flyProps = calculateFlyProps($navigationItems.length, i)}
@@ -70,14 +85,7 @@
 				</a>
 			{/each}
 		</div>
-	{/if}
-
-	{#if showSettings}
-		<div
-			on:click={() => (showSettings = false)}
-			transition:fade={{ duration: 100 }}
-			class="absolute top-0 z-10 w-full bg-black bg-opacity-30 h-screen"
-		/>
+	{:else if showSettings}
 		<div class="absolute z-20 w-full flex flex-col divide-y">
 			{#each settingsItems as item, i}
 				{@const flyProps = calculateFlyProps($navigationItems.length, i)}

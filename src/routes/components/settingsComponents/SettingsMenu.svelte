@@ -46,11 +46,11 @@
 			class="px-4 py-2 hover:border-slate-500 border-transparent border-x-4"
 			in:fly={{
 				x: -25,
-				y: -25,
+				y: -50,
 				duration: 150 + 40 * (options.length - 1 - i),
 				easing: sineOut
 			}}
-			out:fly={{ x: -25, y: -25, duration: 150 + 40 * i, easing: sineIn }}
+			out:fly={{ x: -25, y: -50, duration: 150 + 40 * i, easing: sineIn }}
 		>
 			<svelte:component this={component} />
 		</div>

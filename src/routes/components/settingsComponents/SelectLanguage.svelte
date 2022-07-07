@@ -2,7 +2,12 @@
 	import language, { type Language } from 'src/stores/language';
 	import i18n from './i18n';
 
-	type LanguageItem = { code: Language; name: string; activeClassName: string };
+	interface LanguageItem {
+		code: Language;
+		name: string;
+		activeClassName: string;
+	}
+
 	let languageItems: LanguageItem[] = [
 		{ code: 'vi', name: 'Tiếng Việt', activeClassName: 'text-red-700' },
 		{ code: 'en', name: 'English', activeClassName: 'text-blue-700' }
