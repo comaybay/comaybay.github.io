@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { randomRange,randomRangeInt } from 'src/utils/math';
+	import { randomRange, randomRangeInt } from 'src/utils/math';
 
 	export let className = '';
 

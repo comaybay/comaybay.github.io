@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { fade,fly } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import SelectLanguage from '../settingsComponents/SelectLanguage.svelte';
 	import SelectMode from '../settingsComponents/SelectTheme.svelte';
 	import SettingsButton from '../settingsComponents/SettingsButton.svelte';
@@ -42,17 +42,9 @@
 </script>
 
 <nav class="sticky top-0 md:hidden">
-	<div
-		class="relative z-50 flex justify-between w-full items-center font-comfortaa px-4 pt-3 pb-2 border-b bg-white"
-	>
+	<div class="relative z-50 flex justify-between w-full items-center font-comfortaa px-4 pt-3 pb-2 border-b bg-white">
 		<div>
-			<a
-				href="/"
-				class="font-comfortaa text-slate-500 py-2 text-center text-xl"
-				onclick={closeMenu}
-			>
-				Cmb
-			</a>
+			<a href="/" class="font-comfortaa text-slate-500 py-2 text-center text-xl" onclick={closeMenu}> Cmb </a>
 		</div>
 		<div class="flex space-x-4">
 			<SettingsButton bind:active={showSettings} />

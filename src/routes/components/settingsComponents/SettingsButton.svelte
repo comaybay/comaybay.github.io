@@ -26,11 +26,7 @@
 	}
 </script>
 
-<button
-	on:click={toggleActive}
-	on:mouseenter={() => (hovered = true)}
-	on:mouseleave={() => (hovered = false)}
->
+<button on:click={toggleActive} on:mouseenter={() => (hovered = true)} on:mouseleave={() => (hovered = false)}>
 	<svg
 		style={rotateStyle}
 		viewBox="0 0 35 35"
