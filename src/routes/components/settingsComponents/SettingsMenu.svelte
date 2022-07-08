@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { fly, fade } from 'svelte/transition';
-	import { sineOut, sineIn } from 'svelte/easing';
-	import SelectLanguage from './SelectLanguage.svelte';
 	import clickoutside from 'src/actions/clickoutside';
+	import { onDestroy,onMount } from 'svelte';
+	import { sineIn,sineOut } from 'svelte/easing';
+	import { fade,fly } from 'svelte/transition';
+	import SelectLanguage from './SelectLanguage.svelte';
 	import SelectTheme from './SelectTheme.svelte';
-	import { onDestroy, onMount } from 'svelte';
 
 	const options = [SelectLanguage, SelectTheme];
 	let menu: HTMLDivElement;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import language, { type Language } from 'src/stores/language';
+	import language,{ type Language } from 'src/stores/language';
 	import i18n from './i18n';
 
 	interface LanguageItem {

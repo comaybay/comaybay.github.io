@@ -1,5 +1,5 @@
 import { browser } from "$app/env";
-import { writable, type Writable } from "svelte/store"
+import { writable, type Writable } from "svelte/store";
 
 const languages = ['vi', 'en'] as const;
 

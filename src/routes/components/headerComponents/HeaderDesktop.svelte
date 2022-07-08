@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import CMB from './CMB.svelte';
 	import SettingsButton from '../settingsComponents/SettingsButton.svelte';
-	import ShakingLink from './ShakingLink.svelte';
-	import navigationItems from './navigationItems';
 	import SettingsMenu from '../settingsComponents/SettingsMenu.svelte';
+	import CMB from './CMB.svelte';
+	import navigationItems from './navigationItems';
+	import ShakingLink from './ShakingLink.svelte';
 
 	let showSettings = false;
 
