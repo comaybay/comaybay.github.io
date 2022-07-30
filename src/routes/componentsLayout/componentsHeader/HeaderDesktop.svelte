@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import SettingsButton from '../settingsComponents/SettingsButton.svelte';
-	import SettingsMenu from '../settingsComponents/SettingsMenu.svelte';
+	import SettingsButton from '../componentsSettings/SettingsButton.svelte';
+	import SettingsMenu from '../componentsSettings/SettingsMenu.svelte';
 	import CMB from './CMB.svelte';
 	import navigationItems from './navigationItems';
 	import ShakingLink from './ShakingLink.svelte';

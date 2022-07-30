@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { fade, fly } from 'svelte/transition';
-	import SelectLanguage from '../settingsComponents/SelectLanguage.svelte';
-	import SelectMode from '../settingsComponents/SelectTheme.svelte';
-	import SettingsButton from '../settingsComponents/SettingsButton.svelte';
+	import SelectLanguage from '../componentsSettings/SelectLanguage.svelte';
+	import SelectMode from '../componentsSettings/SelectTheme.svelte';
+	import SettingsButton from '../componentsSettings/SettingsButton.svelte';
 	import MenuButton from './MenuButton.svelte';
 	import navigationItems from './navigationItems';
 
