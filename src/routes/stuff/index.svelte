@@ -1,2 +1,5 @@
-<p>work in progress!</p>
-c
+<script>
+	import WorkInProgress from '../components/WorkInProgress.svelte';
+</script>
+
+<WorkInProgress />
