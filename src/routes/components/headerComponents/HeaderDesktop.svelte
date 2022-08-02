@@ -14,7 +14,7 @@
 </script>
 
 <CMB className="hidden md:block mt-4" />
-<nav class="sticky top-0 hidden md:block pt-4 bg-white">
+<nav class="sticky z-10 top-0 hidden md:block pt-4 bg-white">
 	<div class="flex justify-center mx-4">
 		<div class="flex items-center space-x-8 text-xl font-comfortaa px-4 border-b ">
 			{#each $navigationItems as item}

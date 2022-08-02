@@ -4,4 +4,6 @@
 </script>
 
 <Header />
-<slot />
+<div class="relative z-0">
+	<slot />
+</div>
