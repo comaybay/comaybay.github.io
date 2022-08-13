@@ -80,5 +80,5 @@
 @tailwind utilities;
 
 html {
-	@apply text-slate-800;
+	@apply text-slate-600 font-light;
 }

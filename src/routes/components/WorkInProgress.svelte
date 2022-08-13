@@ -20,7 +20,7 @@
 	});
 </script>
 
-<div class="fill-slate-500 mt-[20vh] md:mt-0">
+<div class="fill-slate-600 mt-[20vh] md:mt-0">
 	<!-- prettier-ignore -->
 	<svg class="mx-auto max-w-2xl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1334">
 			<g class:hidden={mainIndex !== 0}>
@@ -176,7 +176,7 @@
       </g>
 		</svg>
 	<h1
-		class="md:absolute md:top-[400px] md:left-[47%] text-center md:text-left text-slate-500 text-4xl md:text-5xl font-comfortaa font-light"
+		class="md:absolute md:top-[400px] md:left-[47%] text-center md:text-left text-4xl md:text-5xl font-comfortaa font-light"
 	>
 		{$i18n.wip}
 	</h1>
