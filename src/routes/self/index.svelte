@@ -1,5 +1,6 @@
 <script>
 	import Content from '../components/Content.svelte';
+	import SocialsDesktop from './components/SocialsDesktop.svelte';
 	import t from './i18n';
 </script>
 
@@ -9,5 +10,8 @@
 	<p class="">{$t.whatICreate}</p>
 	<p class="mt-3">{$t.dontExpectQuality}</p>
 	<p class="mt-3">{$t.ideaToReality}</p>
-	<p class="mt-3">{$t.checkOutMyStuff}</p>
+	<p class="mt-12">{$t.checkOutMyStuff}</p>
 </Content>
+<div class="mt-8 pb-8">
+	<SocialsDesktop />
+</div>
