@@ -7,6 +7,8 @@ This component will center and give limit content width.
 	export let className = '';
 </script>
 
-<div class="mt-4 mx-auto max-w-5xl {className}">
-	<slot />
+<div class="mt-4 flex justify-center">
+	<div class="mx-4 max-w-5xl {className}">
+		<slot />
+	</div>
 </div>
