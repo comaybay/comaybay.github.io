@@ -13,7 +13,9 @@ const config = {
   ],
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      precompress: true
+    }),
     appDir: 'app',
     prerender: {
       default: true
