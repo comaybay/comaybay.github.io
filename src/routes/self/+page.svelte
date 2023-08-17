@@ -1,7 +1,7 @@
 <script>
-	import Content from '../components/Content.svelte';
-	import LazyComponent from '../components/LazyComponent.svelte';
-	import ThreeDots from '../components/placeHolders/ThreeDots.svelte';
+	import Content from '$lib/components/Content.svelte';
+	import LazyComponent from '$lib/components/LazyComponent.svelte';
+	import ThreeDots from 'src/lib/components/placeholders/ThreeDots.svelte';
 	import t from './i18n';
 </script>
 
@@ -13,11 +13,11 @@
 	<p class="mt-3">{$t.ideaToReality}</p>
 	<p class="mt-5 md:mt-10">{$t.checkOutMyStuff}</p>
 
-	<LazyComponent containerClassName="my-10 md:hidden" loadFunc={() => import('./components/SocialsMobile.svelte')}>
+	<LazyComponent containerClassName="my-10 md:hidden" loadFunc={() => import('./SocialsMobile.svelte')}>
 		<ThreeDots />
 	</LazyComponent>
 </Content>
 
-<LazyComponent containerClassName="my-10 hidden md:block" loadFunc={() => import('./components/SocialsDesktop.svelte')}>
+<LazyComponent containerClassName="my-10 hidden md:block" loadFunc={() => import('./SocialsDesktop.svelte')}>
 	<ThreeDots />
 </LazyComponent>

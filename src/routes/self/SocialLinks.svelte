@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ShakingLink from 'src/routes/componentsLayout/componentsHeader/ShakingLink.svelte';
+	import ShakingLink from '$lib/layout/componentsHeader/ShakingLink.svelte';
 
 	const twitterUrl = 'https://twitter.com/comaybay';
 	const youtubeUrl = 'https://youtube.com/c/comaybay';

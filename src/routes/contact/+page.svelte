@@ -1,5 +1,5 @@
 <script>
-	import WorkInProgress from '../components/WorkInProgress.svelte';
+	import WorkInProgress from '$lib/components/WorkInProgress.svelte';
 </script>
 
 <WorkInProgress />
