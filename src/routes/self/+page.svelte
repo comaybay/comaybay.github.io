@@ -1,7 +1,7 @@
 <script>
 	import Content from '$lib/components/Content.svelte';
 	import LazyComponent from '$lib/components/LazyComponent.svelte';
-	import ThreeDots from 'src/lib/components/placeholders/ThreeDots.svelte';
+	import ThreeDots from '$lib/components/placeholders/ThreeDots.svelte';
 	import t from './i18n';
 </script>
 
