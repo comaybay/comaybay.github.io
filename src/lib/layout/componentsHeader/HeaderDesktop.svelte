@@ -3,8 +3,8 @@
 	import SettingsButton from '../componentsSettings/SettingsButton.svelte';
 	import SettingsMenu from '../componentsSettings/SettingsMenu.svelte';
 	import CMB from './CMB.svelte';
-	import navigationItems from './navigationItems';
 	import ShakingLink from './ShakingLink.svelte';
+	import navigationItems from './navigationItems';
 
 	let showSettings = false;
 
@@ -16,7 +16,7 @@
 <CMB className="hidden md:block mt-4" />
 <nav class="sticky z-10 top-0 hidden md:block pt-4 bg-white">
 	<div class="flex justify-center mx-4">
-		<div class="flex items-center space-x-8 text-xl font-comfortaa px-4 border-b ">
+		<div class="flex items-center space-x-8 text-xl font-comfortaa px-4 border-b">
 			{#each $navigationItems as item}
 				<ShakingLink
 					className="transition h-full flex items-center pb-2

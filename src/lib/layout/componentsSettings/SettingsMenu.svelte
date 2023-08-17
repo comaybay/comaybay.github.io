@@ -1,5 +1,5 @@
 <script lang="ts">
-	import clickoutside from 'src/actions/clickoutside';
+	import clickoutside from '$lib/actions/clickoutside';
 	import { onDestroy, onMount } from 'svelte';
 	import { sineIn, sineOut } from 'svelte/easing';
 	import { fade, fly } from 'svelte/transition';
